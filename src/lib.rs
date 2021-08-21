@@ -94,8 +94,8 @@ where
         self.write_command(Instruction::FRMCTR3, &[0x01, 0x2C, 0x2D, 0x01, 0x2C, 0x2D])?;
         self.write_command(Instruction::INVCTR, &[0x07])?;
         self.write_command(Instruction::PWCTR1, &[0xA2, 0x02, 0x84])?;
-        self.write_command(Instruction::PWCTR2, &[0xC5])?;
-        self.write_command(Instruction::PWCTR3, &[0x0A, 0x00])?;
+        self.write_command(Instruction::PWCTR2, &[0x0A, 0x00])?;
+        // self.write_command(Instruction::PWCTR3, &[0x0A, 0x00])?;
         self.write_command(Instruction::PWCTR4, &[0x8A, 0x2A])?;
         self.write_command(Instruction::PWCTR5, &[0x8A, 0xEE])?;
         self.write_command(Instruction::VMCTR1, &[0x0E])?;
@@ -105,7 +105,7 @@ where
             self.write_command(Instruction::INVOFF, &[])?;
         }
         if self.rgb {
-            self.write_command(Instruction::MADCTL, &[0x00])?;
+            self.write_command(Instruction::MADCTL, &[0xC8])?;
         } else {
             self.write_command(Instruction::MADCTL, &[0x08])?;
         }
